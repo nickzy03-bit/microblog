@@ -1,1 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Microblog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Microblog</h1>
+    <div id="user-info"></div>
+  </header>
 
+  <!-- Auth forms -->
+  <section id="auth-section">
+    <div class="card">
+      <h2>Sign up</h2>
+      <input id="signup-email" type="email" placeholder="Email" />
+      <input id="signup-password" type="password" placeholder="Password (min 6)" />
+      <button id="signup-btn">Create account</button>
+    </div>
+
+    <div class="card">
+      <h2>Log in</h2>
+      <input id="login-email" type="email" placeholder="Email" />
+      <input id="login-password" type="password" placeholder="Password" />
+      <button id="login-btn">Log in</button>
+    </div>
+  </section>
+
+  <!-- App section (only visible when logged in) -->
+  <section id="app-section" class="hidden">
+    <div class="composer card">
+      <textarea id="tweet-input" rows="3" maxlength="280" placeholder="What's happening? (max 280 chars)"></textarea>
+      <div class="composer-actions">
+        <span id="char-count">0/280</span>
+        <button id="post-btn">Post</button>
+        <button id="logout-btn" class="secondary">Log out</button>
+      </div>
+    </div>
+
+    <div class="feed card">
+      <h2>Feed</h2>
+      <ul id="feed-list"></ul>
+    </div>
+  </section>
+
+  <script type="module" src="firebase-config.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
